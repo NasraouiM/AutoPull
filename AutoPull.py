@@ -1,8 +1,8 @@
 from os import listdir, chdir
-from os.path import isdir
+from os.path import isdir, expanduser
 from subprocess import run
 
-HOME = os.path.expanduser("~")
+HOME = expanduser("~")
 ConfigFolder = HOME + "/.config/AutoPull"
 allowed_src = ConfigFolder + "/AllowedRepos" 
 config_src = ConfigFolder + "/AutoPull.conf"
