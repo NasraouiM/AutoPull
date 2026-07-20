@@ -2,9 +2,10 @@ from os import listdir, chdir
 from os.path import isdir
 from subprocess import run
 
-ConfigFolder = "/etc/AutoPull/"
-allowed_src = "/etc/AutoPull/AllowedRepos" 
-config_src = "/etc/AutoPull/AutoPull.conf"
+HOME = os.path.expanduser("~")
+ConfigFolder = HOME + "/.config/AutoPull"
+allowed_src = ConfigFolder + "/AllowedRepos" 
+config_src = ConfigFolder + "/AutoPull.conf"
 default_config = "#This file should be modified with caution, misconfiguration can result in complete disfunction of the program\n#The src value should point to the folder containing all the GitHub repositories that the user wishes to Auto-Update\n\n[Settings]\n\nsrc = {}\nVerboseGit = on\nDebugging = off"
 
 FileNotFoundErrorMessage = "\n--------------------------------------------\n{} doesn't exist ! Recreating a default file at {}"
